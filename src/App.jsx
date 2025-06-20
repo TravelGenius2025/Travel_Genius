@@ -1,0 +1,1 @@
+// App layout with AI assistant chat, routes, and pages
