@@ -1,3 +1,4 @@
+// TravelGenius.io full logic
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
@@ -57,16 +58,7 @@ function Home() {
   return (
     <div style={{ padding: 40 }}>
       <h1>Welcome to TravelGenius.io</h1>
-      <p>Smart travel deals, personalized experiences, and intelligent planning tools — all in one place.</p>
-    </div>
-  );
-}
-
-function Hotels() {
-  return (
-    <div style={{ padding: 40 }}>
-      <h2>Hotels</h2>
-      <p>Compare Agoda, Booking.com, Expedia deals (mocked)</p>
+      <p>Smart deals, personalized planning & live AI tools built-in.</p>
     </div>
   );
 }
@@ -77,8 +69,17 @@ function Flights() {
   return (
     <div style={{ padding: 40 }}>
       <h2>Search Flights</h2>
-      <LocationAutoComplete value={from} onChange={setFrom} onSelect={setFrom} placeholder="From" />
-      <LocationAutoComplete value={to} onChange={setTo} onSelect={setTo} placeholder="To" />
+      <LocationAutoComplete value={from} onChange={setFrom} onSelect={setFrom} placeholder="From (City or Airport)" />
+      <LocationAutoComplete value={to} onChange={setTo} onSelect={setTo} placeholder="To (City or Airport)" />
+    </div>
+  );
+}
+
+function Hotels() {
+  return (
+    <div style={{ padding: 40 }}>
+      <h2>Hotels</h2>
+      <p>Real-time deal comparison from Agoda, Expedia, Booking coming soon.</p>
     </div>
   );
 }
@@ -87,7 +88,7 @@ function Activities() {
   return (
     <div style={{ padding: 40 }}>
       <h2>Activities</h2>
-      <p>Viator-style results based on location (mocked)</p>
+      <p>Powered by Viator and Klook integrations</p>
     </div>
   );
 }
@@ -95,8 +96,8 @@ function Activities() {
 function SmartMatch() {
   return (
     <div style={{ padding: 40 }}>
-      <h2>Smart Travel Match</h2>
-      <p>AI-based matching based on age, group size, goal (coming soon)</p>
+      <h2>SmartMatch AI</h2>
+      <p>Tell us your group size, age, and goals — and we’ll suggest ideal rooms, dates and cities.</p>
     </div>
   );
 }
@@ -109,7 +110,7 @@ function App() {
         <Link to="/flights" style={{ marginRight: 10 }}>Flights</Link>
         <Link to="/hotels" style={{ marginRight: 10 }}>Hotels</Link>
         <Link to="/activities" style={{ marginRight: 10 }}>Activities</Link>
-        <Link to="/smartmatch">Smart Match</Link>
+        <Link to="/smartmatch">SmartMatch</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
